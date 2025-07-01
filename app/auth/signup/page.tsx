@@ -1,11 +1,50 @@
 "use client"
 
-import { useActionState } from "react"
+import { useState } from "react"
 import Link from "next/link"
-import { signUp } from "@/app/actions/auth"
+import { useAuth } from "@/app/auth/AuthContext"
 
 export default function SignUp() {
-  const [state, action, isPending] = useActionState(signUp, undefined)
+  const { signIn, loading, error } = useAuth()
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    accountType: "brand",
+    password: "",
+    confirmPassword: "",
+    agreeToTerms: false
+  })
+  const [localError, setLocalError] = useState("")
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLocalError("")
+
+    if (formData.password !== formData.confirmPassword) {
+      setLocalError("Passwords do not match")
+      return
+    }
+
+    if (!formData.agreeToTerms) {
+      setLocalError("You must agree to the terms and conditions")
+      return
+    }
+
+    try {
+      await signIn(formData.email)
+    } catch (err) {
+      setLocalError("Failed to create account")
+    }
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center pt-20 pb-12">
@@ -16,15 +55,13 @@ export default function SignUp() {
         </div>
 
         <div className="bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700">
-          {state?.errors && (
+          {(error || localError) && (
             <div className="bg-red-900 border border-red-600 text-red-200 p-4 mb-6 rounded-md">
-              {Object.entries(state.errors).map(([field, errors]) => (
-                <p key={field}>{errors?.[0]}</p>
-              ))}
+              {error || localError}
             </div>
           )}
 
-          <form action={action} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-2">
@@ -34,6 +71,8 @@ export default function SignUp() {
                   type="text"
                   id="firstName"
                   name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                   placeholder="John"
                   required
@@ -47,6 +86,8 @@ export default function SignUp() {
                   type="text"
                   id="lastName"
                   name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                   placeholder="Doe"
                   required
@@ -62,6 +103,8 @@ export default function SignUp() {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                 placeholder="your.email@example.com"
                 required
@@ -75,6 +118,8 @@ export default function SignUp() {
               <select
                 id="accountType"
                 name="accountType"
+                value={formData.accountType}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                 required
               >
@@ -91,6 +136,8 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 name="password"
+                value={formData.password}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                 placeholder="Create a strong password"
                 required
@@ -105,6 +152,8 @@ export default function SignUp() {
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                 placeholder="Confirm your password"
                 required
@@ -116,6 +165,8 @@ export default function SignUp() {
                 id="agreeToTerms"
                 name="agreeToTerms"
                 type="checkbox"
+                checked={formData.agreeToTerms}
+                onChange={handleInputChange}
                 className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-600 rounded bg-gray-700"
                 required
               />
@@ -133,10 +184,10 @@ export default function SignUp() {
 
             <button
               type="submit"
-              disabled={isPending}
+              disabled={loading}
               className="w-full py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isPending ? (
+              {loading ? (
                 <>
                   <svg
                     className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
