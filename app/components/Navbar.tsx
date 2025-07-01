@@ -13,34 +13,27 @@ export default async function Navbar() {
           {/* Logo and Brand */}
           <div className="flex items-center space-x-3">
             <Image src="/logo.png" alt="AuraSight" width={36} height={36} className="rounded-lg" priority />
-            <span className="font-bold text-lg text-purple-700 dark:text-purple-300">AuraSight</span>
+            <Link href="/" className="font-bold text-lg text-purple-700 dark:text-purple-300">
+              AuraSight
+            </Link>
           </div>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-purple-600 dark:text-purple-300 font-medium">
-              Home
-            </Link>
             <Link
-              href="/philosophy"
+              href="/#philosophy"
               className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-300"
             >
               Philosophy
             </Link>
             <Link
-              href="/synergy"
-              className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-300"
-            >
-              Vibe & Identity
-            </Link>
-            <Link
-              href="/mission"
+              href="/#mission"
               className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-300"
             >
               Our Mission
             </Link>
             <Link
-              href="/contact"
+              href="/#contact"
               className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-300"
             >
               Contact
