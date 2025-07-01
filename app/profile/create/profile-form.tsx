@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useActionState } from "react"
+import { useState, useActionState } from "react" // Ensure useActionState is imported
 import { createProfile } from "@/app/actions/profile"
 
 interface UserData {
@@ -38,6 +38,7 @@ interface ProfileData {
 }
 
 export default function ProfileForm({ userData }: ProfileFormProps) {
+  // useActionState is correctly used here, assuming React 19 is active
   const [state, action, isPending] = useActionState(createProfile, undefined)
   const [step, setStep] = useState(1)
   const [profileData, setProfileData] = useState<ProfileData>({
