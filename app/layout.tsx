@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
 import Navbar from "./components/Navbar"
-
+import { AuthProvider } from "./auth/AuthContext"
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -32,8 +32,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 text-white`}
       >
+      <AuthProvider>
         <Navbar />
         <main className="container mx-auto px-4 py-8">{children}</main>
+        <AuthProvider/>
         <footer className="bg-gray-800 text-white p-6 mt-12">
           <div className="container mx-auto text-center">
             <p>© {new Date().getFullYear()} AuraSight. All rights reserved.</p>
