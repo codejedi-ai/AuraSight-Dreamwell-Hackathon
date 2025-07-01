@@ -1,11 +1,18 @@
 "use client"
 
-import { useActionState } from "react"
+import { useState } from "react"
 import Link from "next/link"
-import { signIn } from "@/app/actions/auth"
+import { useAuth } from "@/app/auth/AuthContext"
 
 export default function SignIn() {
-  const [state, action, isPending] = useActionState(signIn, undefined)
+  const { signIn, loading, error } = useAuth()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    await signIn(email)
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center pt-20">
@@ -16,15 +23,13 @@ export default function SignIn() {
         </div>
 
         <div className="bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700">
-          {state?.errors && (
+          {error && (
             <div className="bg-red-900 border border-red-600 text-red-200 p-4 mb-6 rounded-md">
-              {Object.entries(state.errors).map(([field, errors]) => (
-                <p key={field}>{errors?.[0]}</p>
-              ))}
+              {error}
             </div>
           )}
 
-          <form action={action} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                 Email Address
@@ -32,7 +37,8 @@ export default function SignIn() {
               <input
                 type="email"
                 id="email"
-                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                 placeholder="your.email@example.com"
                 required
@@ -46,7 +52,8 @@ export default function SignIn() {
               <input
                 type="password"
                 id="password"
-                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
                 placeholder="Enter your password"
                 required
@@ -73,10 +80,10 @@ export default function SignIn() {
 
             <button
               type="submit"
-              disabled={isPending}
+              disabled={loading}
               className="w-full py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isPending ? (
+              {loading ? (
                 <>
                   <svg
                     className="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline"
