@@ -1,0 +1,2267 @@
+{
+  "version": "41.0.0",
+  "artifacts": {
+    "amplify-aurasight-darcy-sandbox-17345db928.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "amplify-aurasight-darcy-sandbox-17345db928.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "amplify-aurasight-darcy-sandbox-17345db928": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "amplify-aurasight-darcy-sandbox-17345db928.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "amplify:deployment-type": "sandbox",
+          "created-by": "amplify"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ba29aa6d11567abe97b85d83de2fdfe2d9dca0033c1995fcd3d6d0a670895140.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "amplify-aurasight-darcy-sandbox-17345db928.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "amplify-aurasight-darcy-sandbox-17345db928.assets"
+      ],
+      "metadata": {
+        "/amplify-aurasight-darcy-sandbox-17345db928": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "amplify:deployment-type",
+                "Value": "sandbox"
+              },
+              {
+                "Key": "created-by",
+                "Value": "amplify"
+              }
+            ]
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/deploymentType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deploymentType"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "region"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyAuth/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPool4BA7F805"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyAuth/UserPoolAppClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPoolAppClient2626C6F8"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyAuth/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPool3FDE84CC"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyAuth/authenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthauthenticatedUserRoleD8DA3689"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyAuth/unauthenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthunauthenticatedUserRole2B524D9E"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyAuth/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPoolRoleAttachment045F17C8"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyaurasightdarcysandbox17345db928authamplifyAuthUserPoolD1F178B1Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928authamplifyAuthUserPoolD1F178B1Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyaurasightdarcysandbox17345db928authamplifyAuthUserPoolAppClient0297BB83Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928authamplifyAuthUserPoolAppClient0297BB83Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth/amplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/auth.NestedStack/auth.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "auth179371D7"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/userPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "userPoolId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/webClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webClientId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/identityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "identityPoolId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/authRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "authRegion"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/allowUnauthenticatedIdentities": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "allowUnauthenticatedIdentities"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/signupAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "signupAttributes"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/usernameAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "usernameAttributes"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/verificationMechanisms": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "verificationMechanisms"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/passwordPolicyMinLength": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyMinLength"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/passwordPolicyRequirements": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyRequirements"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/mfaConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaConfiguration"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/mfaTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaTypes"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/socialProviders": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "socialProviders"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/oauthCognitoDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthCognitoDomain"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/oauthScope": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthScope"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/oauthRedirectSignIn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignIn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/oauthRedirectSignOut": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignOut"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/oauthResponseType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthResponseType"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/oauthClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthClientId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/groups": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "groups"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/GraphQLAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPI42A6FA33"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/GraphQLAPI/TransformerSchema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/GraphQLAPI/NONE_DS": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/GraphQLAPI/NONE_DS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPINONEDS684BF699"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/AmplifyManagedTableIsCompleteRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableIsCompleteRoleF825222C"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleB4E71DEA"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleDefaultPolicyF6DABCB6"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkonEvent1DFC2ECC"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkisComplete2E51021B"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRole470BE899"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRoleDefaultPolicy89F3836A"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachine060600BC"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventB44D61C3Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventB44D61C3Arn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager.NestedStack/AmplifyTableManager.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "User"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "User"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/CustomTableUserTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "User"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/GetAttUserTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttUserTableStreamArn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/GetAttUserTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttUserTableName"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserIAMRole"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserIAMRole93CEE926"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserIAMRole"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserTable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserTable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/QuerygetUserauth0Function/QuerygetUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserauth0FunctionQuerygetUserauth0FunctionAppSyncFunction9E6250B0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/QuerygetUserpostAuth0Function/QuerygetUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserpostAuth0FunctionQuerygetUserpostAuth0FunctionAppSyncFunction2792AC60"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/QueryGetUserDataResolverFn/QueryGetUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetUserDataResolverFnQueryGetUserDataResolverFnAppSyncFunction36A3E4CF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/queryGetUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/QuerylistUsersauth0Function/QuerylistUsersauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUsersauth0FunctionQuerylistUsersauth0FunctionAppSyncFunctionA1FF61AB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUsersauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/QuerylistUserspostAuth0Function/QuerylistUserspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserspostAuth0FunctionQuerylistUserspostAuth0FunctionAppSyncFunction37C5583D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserspostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/QueryListUsersDataResolverFn/QueryListUsersDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListUsersDataResolverFnQueryListUsersDataResolverFnAppSyncFunction83574EBA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListUsersDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/queryListUsersResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listUsers"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationcreateUserinit0Function/MutationcreateUserinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserinit0FunctionMutationcreateUserinit0FunctionAppSyncFunctionEDF87EC6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserinit0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationcreateUserauth0Function/MutationcreateUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserauth0FunctionMutationcreateUserauth0FunctionAppSyncFunction30556A6C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationcreateUserpostAuth0Function/MutationcreateUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserpostAuth0FunctionMutationcreateUserpostAuth0FunctionAppSyncFunction176E20CB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationCreateUserDataResolverFn/MutationCreateUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateUserDataResolverFnMutationCreateUserDataResolverFnAppSyncFunction22E7974E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/mutationCreateUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationupdateUserinit0Function/MutationupdateUserinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserinit0FunctionMutationupdateUserinit0FunctionAppSyncFunctionC2E8A924"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserinit0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationupdateUserauth0Function/MutationupdateUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserauth0FunctionMutationupdateUserauth0FunctionAppSyncFunctionDF95DA65"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationupdateUserpostAuth0Function/MutationupdateUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserpostAuth0FunctionMutationupdateUserpostAuth0FunctionAppSyncFunctionD4B80000"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationUpdateUserDataResolverFn/MutationUpdateUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateUserDataResolverFnMutationUpdateUserDataResolverFnAppSyncFunction6ADF3910"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/mutationUpdateUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationdeleteUserauth0Function/MutationdeleteUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserauth0FunctionMutationdeleteUserauth0FunctionAppSyncFunction9B900ACD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationdeleteUserpostAuth0Function/MutationdeleteUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserpostAuth0FunctionMutationdeleteUserpostAuth0FunctionAppSyncFunction9B804910"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/MutationDeleteUserDataResolverFn/MutationDeleteUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteUserDataResolverFnMutationDeleteUserDataResolverFnAppSyncFunction0B4F366A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/mutationDeleteUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptiononCreateUserauth0Function/SubscriptiononCreateUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserauth0FunctionSubscriptiononCreateUserauth0FunctionAppSyncFunctionE9B4721A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptiononCreateUserpostAuth0Function/SubscriptiononCreateUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserpostAuth0FunctionSubscriptiononCreateUserpostAuth0FunctionAppSyncFunction62AE12DA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptionOnCreateUserDataResolverFn/SubscriptionOnCreateUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateUserDataResolverFnSubscriptionOnCreateUserDataResolverFnAppSyncFunction23B2F1B9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/subscriptionOnCreateUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptiononUpdateUserauth0Function/SubscriptiononUpdateUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserauth0FunctionSubscriptiononUpdateUserauth0FunctionAppSyncFunction78530C9F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptiononUpdateUserpostAuth0Function/SubscriptiononUpdateUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserpostAuth0FunctionSubscriptiononUpdateUserpostAuth0FunctionAppSyncFunctionF3EF85D1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptionOnUpdateUserDataResolverFn/SubscriptionOnUpdateUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateUserDataResolverFnSubscriptionOnUpdateUserDataResolverFnAppSyncFunction93FA5DF6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/subscriptionOnUpdateUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptiononDeleteUserauth0Function/SubscriptiononDeleteUserauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserauth0FunctionSubscriptiononDeleteUserauth0FunctionAppSyncFunction0C5B7186"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteUserauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptiononDeleteUserpostAuth0Function/SubscriptiononDeleteUserpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserpostAuth0FunctionSubscriptiononDeleteUserpostAuth0FunctionAppSyncFunction24A5E815"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteUserpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/SubscriptionOnDeleteUserDataResolverFn/SubscriptionOnDeleteUserDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteUserDataResolverFnSubscriptionOnDeleteUserDataResolverFnAppSyncFunction2BEB0972"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteUserDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/subscriptionOnDeleteUserResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteUser"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/UserOwnerDataResolverFn/UserOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserOwnerDataResolverFnUserOwnerDataResolverFnAppSyncFunction78EE3B72"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/userOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "User.owner"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource7A00050EOutputs.amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventB44D61C3Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource7A00050EOutputsamplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomPro7027EDCF"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/User.NestedStack/User.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataUserNestedStackUserNestedStackResource9488907F"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Profile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Profile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/CustomTableProfileTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Profile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/GetAttProfileTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttProfileTableStreamArn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/GetAttProfileTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttProfileTableName"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "ProfileIAMRole"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileIAMRole80484AAA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "ProfileIAMRole"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "ProfileTable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "ProfileTable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/QuerygetProfileauth0Function/QuerygetProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetProfileauth0FunctionQuerygetProfileauth0FunctionAppSyncFunction5E7A5803"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/QuerygetProfilepostAuth0Function/QuerygetProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetProfilepostAuth0FunctionQuerygetProfilepostAuth0FunctionAppSyncFunctionB9CDE501"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/QueryGetProfileDataResolverFn/QueryGetProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetProfileDataResolverFnQueryGetProfileDataResolverFnAppSyncFunctionCB729908"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/queryGetProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/QuerylistProfilesauth0Function/QuerylistProfilesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistProfilesauth0FunctionQuerylistProfilesauth0FunctionAppSyncFunctionC1680E9E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistProfilesauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/QuerylistProfilespostAuth0Function/QuerylistProfilespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistProfilespostAuth0FunctionQuerylistProfilespostAuth0FunctionAppSyncFunction6C416119"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistProfilespostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/QueryListProfilesDataResolverFn/QueryListProfilesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListProfilesDataResolverFnQueryListProfilesDataResolverFnAppSyncFunction599CDB47"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListProfilesDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/queryListProfilesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listProfiles"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationcreateProfileinit0Function/MutationcreateProfileinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateProfileinit0FunctionMutationcreateProfileinit0FunctionAppSyncFunction4BDCCBDF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateProfileinit0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationcreateProfileauth0Function/MutationcreateProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateProfileauth0FunctionMutationcreateProfileauth0FunctionAppSyncFunctionBD7AD1AD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationcreateProfilepostAuth0Function/MutationcreateProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateProfilepostAuth0FunctionMutationcreateProfilepostAuth0FunctionAppSyncFunction3A4F48A6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationCreateProfileDataResolverFn/MutationCreateProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateProfileDataResolverFnMutationCreateProfileDataResolverFnAppSyncFunction00237783"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/mutationCreateProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationupdateProfileinit0Function/MutationupdateProfileinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateProfileinit0FunctionMutationupdateProfileinit0FunctionAppSyncFunction35E77D66"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateProfileinit0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationupdateProfileauth0Function/MutationupdateProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateProfileauth0FunctionMutationupdateProfileauth0FunctionAppSyncFunction38E06A8A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationupdateProfilepostAuth0Function/MutationupdateProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateProfilepostAuth0FunctionMutationupdateProfilepostAuth0FunctionAppSyncFunctionF899C16F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationUpdateProfileDataResolverFn/MutationUpdateProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateProfileDataResolverFnMutationUpdateProfileDataResolverFnAppSyncFunction4BC0C6E8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/mutationUpdateProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationdeleteProfileauth0Function/MutationdeleteProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteProfileauth0FunctionMutationdeleteProfileauth0FunctionAppSyncFunction4A5CBB70"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationdeleteProfilepostAuth0Function/MutationdeleteProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteProfilepostAuth0FunctionMutationdeleteProfilepostAuth0FunctionAppSyncFunctionA246E1E1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/MutationDeleteProfileDataResolverFn/MutationDeleteProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteProfileDataResolverFnMutationDeleteProfileDataResolverFnAppSyncFunctionFD80DBEF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/mutationDeleteProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptiononCreateProfileauth0Function/SubscriptiononCreateProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateProfileauth0FunctionSubscriptiononCreateProfileauth0FunctionAppSyncFunction90396F5D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptiononCreateProfilepostAuth0Function/SubscriptiononCreateProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateProfilepostAuth0FunctionSubscriptiononCreateProfilepostAuth0FunctionAppSyncFunction1582FBD5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptionOnCreateProfileDataResolverFn/SubscriptionOnCreateProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateProfileDataResolverFnSubscriptionOnCreateProfileDataResolverFnAppSyncFunctionD73E0AEC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/subscriptionOnCreateProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptiononUpdateProfileauth0Function/SubscriptiononUpdateProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateProfileauth0FunctionSubscriptiononUpdateProfileauth0FunctionAppSyncFunction3B89C902"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptiononUpdateProfilepostAuth0Function/SubscriptiononUpdateProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateProfilepostAuth0FunctionSubscriptiononUpdateProfilepostAuth0FunctionAppSyncFunction1B355635"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptionOnUpdateProfileDataResolverFn/SubscriptionOnUpdateProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateProfileDataResolverFnSubscriptionOnUpdateProfileDataResolverFnAppSyncFunction23DD563F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/subscriptionOnUpdateProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptiononDeleteProfileauth0Function/SubscriptiononDeleteProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteProfileauth0FunctionSubscriptiononDeleteProfileauth0FunctionAppSyncFunctionF3853DAE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteProfileauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptiononDeleteProfilepostAuth0Function/SubscriptiononDeleteProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteProfilepostAuth0FunctionSubscriptiononDeleteProfilepostAuth0FunctionAppSyncFunction86BF82FA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/SubscriptionOnDeleteProfileDataResolverFn/SubscriptionOnDeleteProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteProfileDataResolverFnSubscriptionOnDeleteProfileDataResolverFnAppSyncFunction63C1CC62"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteProfileDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/subscriptionOnDeleteProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteProfile"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/ProfileOwnerDataResolverFn/ProfileOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileOwnerDataResolverFnProfileOwnerDataResolverFnAppSyncFunction5BB3F6E3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "ProfileOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/profileOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProfileownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Profile.owner"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource7A00050EOutputs.amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventB44D61C3Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource7A00050EOutputsamplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomPro7027EDCF"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Profile.NestedStack/Profile.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataProfileNestedStackProfileNestedStackResourceB7B0F91D"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MatchRequestTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/CustomTableMatchRequestTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/GetAttMatchRequestTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttMatchRequestTableStreamArn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/GetAttMatchRequestTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttMatchRequestTableName"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequestIAMRole"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MatchRequestIAMRole89CC1A43"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequestIAMRole"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequestTable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MatchRequestDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequestTable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerygetMatchRequestauth0Function/QuerygetMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetMatchRequestauth0FunctionQuerygetMatchRequestauth0FunctionAppSyncFunction187C11FD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerygetMatchRequestpostAuth0Function/QuerygetMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetMatchRequestpostAuth0FunctionQuerygetMatchRequestpostAuth0FunctionAppSyncFunction7C94DCC5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QueryGetMatchRequestDataResolverFn/QueryGetMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetMatchRequestDataResolverFnQueryGetMatchRequestDataResolverFnAppSyncFunction0CBED20A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/queryGetMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerylistMatchRequestsauth0Function/QuerylistMatchRequestsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistMatchRequestsauth0FunctionQuerylistMatchRequestsauth0FunctionAppSyncFunction4FF9D38D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistMatchRequestsauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerylistMatchRequestspostAuth0Function/QuerylistMatchRequestspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistMatchRequestspostAuth0FunctionQuerylistMatchRequestspostAuth0FunctionAppSyncFunction37B26ED2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistMatchRequestspostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QueryListMatchRequestsDataResolverFn/QueryListMatchRequestsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListMatchRequestsDataResolverFnQueryListMatchRequestsDataResolverFnAppSyncFunction1242C221"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListMatchRequestsDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/queryListMatchRequestsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listMatchRequests"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationcreateMatchRequestinit0Function/MutationcreateMatchRequestinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMatchRequestinit0FunctionMutationcreateMatchRequestinit0FunctionAppSyncFunctionD378B255"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMatchRequestinit0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationcreateMatchRequestauth0Function/MutationcreateMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMatchRequestauth0FunctionMutationcreateMatchRequestauth0FunctionAppSyncFunctionA5B8D001"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationcreateMatchRequestpostAuth0Function/MutationcreateMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateMatchRequestpostAuth0FunctionMutationcreateMatchRequestpostAuth0FunctionAppSyncFunctionC52AD81F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationCreateMatchRequestDataResolverFn/MutationCreateMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateMatchRequestDataResolverFnMutationCreateMatchRequestDataResolverFnAppSyncFunctionA2724AE4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/mutationCreateMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationupdateMatchRequestinit0Function/MutationupdateMatchRequestinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMatchRequestinit0FunctionMutationupdateMatchRequestinit0FunctionAppSyncFunction00772410"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMatchRequestinit0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationupdateMatchRequestauth0Function/MutationupdateMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMatchRequestauth0FunctionMutationupdateMatchRequestauth0FunctionAppSyncFunctionA2EC9675"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationupdateMatchRequestpostAuth0Function/MutationupdateMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateMatchRequestpostAuth0FunctionMutationupdateMatchRequestpostAuth0FunctionAppSyncFunction8B4EC0E8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationUpdateMatchRequestDataResolverFn/MutationUpdateMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateMatchRequestDataResolverFnMutationUpdateMatchRequestDataResolverFnAppSyncFunction32B9F18F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/mutationUpdateMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationdeleteMatchRequestauth0Function/MutationdeleteMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteMatchRequestauth0FunctionMutationdeleteMatchRequestauth0FunctionAppSyncFunctionE866BAA3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationdeleteMatchRequestpostAuth0Function/MutationdeleteMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteMatchRequestpostAuth0FunctionMutationdeleteMatchRequestpostAuth0FunctionAppSyncFunctionE6411FF7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationDeleteMatchRequestDataResolverFn/MutationDeleteMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteMatchRequestDataResolverFnMutationDeleteMatchRequestDataResolverFnAppSyncFunctionBB1402C7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/mutationDeleteMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononCreateMatchRequestauth0Function/SubscriptiononCreateMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMatchRequestauth0FunctionSubscriptiononCreateMatchRequestauth0FunctionAppSyncFunction2646666A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononCreateMatchRequestpostAuth0Function/SubscriptiononCreateMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMatchRequestpostAuth0FunctionSubscriptiononCreateMatchRequestpostAuth0FunctionAppSyncFunctionA8BBF023"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptionOnCreateMatchRequestDataResolverFn/SubscriptionOnCreateMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateMatchRequestDataResolverFnSubscriptionOnCreateMatchRequestDataResolverFnAppSyncFunctionDC743485"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/subscriptionOnCreateMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononUpdateMatchRequestauth0Function/SubscriptiononUpdateMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMatchRequestauth0FunctionSubscriptiononUpdateMatchRequestauth0FunctionAppSyncFunction426D7912"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononUpdateMatchRequestpostAuth0Function/SubscriptiononUpdateMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMatchRequestpostAuth0FunctionSubscriptiononUpdateMatchRequestpostAuth0FunctionAppSyncFunction366DDA80"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptionOnUpdateMatchRequestDataResolverFn/SubscriptionOnUpdateMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateMatchRequestDataResolverFnSubscriptionOnUpdateMatchRequestDataResolverFnAppSyncFunction44E8CB61"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/subscriptionOnUpdateMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononDeleteMatchRequestauth0Function/SubscriptiononDeleteMatchRequestauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMatchRequestauth0FunctionSubscriptiononDeleteMatchRequestauth0FunctionAppSyncFunctionAAB17BBA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteMatchRequestauth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononDeleteMatchRequestpostAuth0Function/SubscriptiononDeleteMatchRequestpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMatchRequestpostAuth0FunctionSubscriptiononDeleteMatchRequestpostAuth0FunctionAppSyncFunction5D0DE530"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteMatchRequestpostAuth0Function"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptionOnDeleteMatchRequestDataResolverFn/SubscriptionOnDeleteMatchRequestDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteMatchRequestDataResolverFnSubscriptionOnDeleteMatchRequestDataResolverFnAppSyncFunction9BBF73D9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteMatchRequestDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/subscriptionOnDeleteMatchRequestResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteMatchRequestResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteMatchRequest"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestOwnerDataResolverFn/MatchRequestOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MatchRequestOwnerDataResolverFnMatchRequestOwnerDataResolverFnAppSyncFunction643E878C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequestOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/matchRequestOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MatchRequestownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MatchRequest.owner"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource7A00050EOutputs.amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEventB44D61C3Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource7A00050EOutputsamplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyTableManagerTableManagerCustomPro7027EDCF"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/reference-to-amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest.NestedStack/MatchRequest.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataMatchRequestNestedStackMatchRequestNestedStackResourceDC7D2F2B"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicyF1C1C548"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource437F26F5"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayerE322F905"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB21775929"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/modelIntrospectionSchemaBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketF566B665"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/modelIntrospectionSchemaBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketPolicy4DAB0D15"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/modelIntrospectionSchemaBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketAutoDeleteObjectsCustomResourceFE57309F"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentAwsCliLayer13C432F7"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/modelIntrospectionSchemaBucketDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentCustomResource1536MiB104B97EC"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/AMPLIFY_DATA_GRAPHQL_ENDPOINTParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAGRAPHQLENDPOINTParameter1C2CBB16"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_BUCKET_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMABUCKETNAMEParameter47BF4F44"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_KEYParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMAKEYParameterB6AEAE8A"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/AMPLIFY_DATA_DEFAULT_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATADEFAULTNAMEParameterE7C23CC4"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthUserPoolD1F178B1Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthUserPoolD1F178B1Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthauthenticatedUserRoleD36D4E51Ref"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthunauthenticatedUserRoleD97E2C7DRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/reference-to-amplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputs.amplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifyaurasightdarcysandbox17345db928authNestedStackauthNestedStackResource8851A73AOutputsamplifyaurasightdarcysandbox17345db928authamplifyAuthIdentityPool6108FA9FRef"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8GraphQLUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8GraphQLUrl"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data/amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB32CCAFC1DestinationBucketArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyaurasightdarcysandbox17345db928dataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB32CCAFC1DestinationBucketArn"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/data.NestedStack/data.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "data7552DF31"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/awsAppsyncApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiId"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/awsAppsyncApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiEndpoint"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/awsAppsyncAuthenticationType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAuthenticationType"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/awsAppsyncRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncRegion"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/amplifyApiModelSchemaS3Uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/awsAppsyncAdditionalAuthenticationTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/amplify-aurasight-darcy-sandbox-17345db928/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "amplify-aurasight-darcy-sandbox-17345db928"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  },
+  "minimumCliVersion": "2.1005.0"
+}
