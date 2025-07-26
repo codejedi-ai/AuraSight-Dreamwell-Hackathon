@@ -3,15 +3,24 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useAuth } from "@/app/auth/AuthContext"
+import { useRouter } from "next/navigation"
 
 export default function SignIn() {
-  const { signIn, loading, error } = useAuth()
+  const { signIn, loading, error, clearError } = useAuth()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    await signIn(email)
+    clearError()
+    
+    try {
+      await signIn(email, password)
+      router.push('/profile')
+    } catch (err) {
+      // Error is handled by AuthContext
+    }
   }
 
   return (

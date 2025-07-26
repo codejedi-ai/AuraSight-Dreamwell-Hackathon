@@ -4,6 +4,8 @@ import localFont from "next/font/local"
 import "./globals.css"
 import Navbar from "./components/Navbar"
 import { AuthProvider } from "./auth/AuthContext"
+import "@/amplify"
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",

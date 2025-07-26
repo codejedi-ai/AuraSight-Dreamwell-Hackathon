@@ -22,5 +22,5 @@ export interface ProfileData {
 }
 
 export interface ProfileFormProps {
-  userData: UserData
+  accountType: 'brand' | 'influencer'
 } 

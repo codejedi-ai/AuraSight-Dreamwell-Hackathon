@@ -3,19 +3,22 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useAuth } from "@/app/auth/AuthContext"
+import { useRouter } from "next/navigation"
 
 export default function SignUp() {
-  const { signIn, loading, error } = useAuth()
+  const { signUp, loading, error, clearError } = useAuth()
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    accountType: "brand",
+    accountType: "brand" as 'brand' | 'influencer',
     password: "",
     confirmPassword: "",
     agreeToTerms: false
   })
   const [localError, setLocalError] = useState("")
+  const [needsConfirmation, setNeedsConfirmation] = useState(false)
+  const router = useRouter()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target
@@ -27,6 +30,7 @@ export default function SignUp() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    clearError()
     setLocalError("")
 
     if (formData.password !== formData.confirmPassword) {
@@ -40,10 +44,40 @@ export default function SignUp() {
     }
 
     try {
-      await signIn(formData.email)
+      await signUp(
+        formData.email, 
+        formData.password, 
+        formData.firstName, 
+        formData.lastName, 
+        formData.accountType
+      )
+      setNeedsConfirmation(true)
     } catch (err) {
-      setLocalError("Failed to create account")
+      // Error is handled by AuthContext
     }
+  }
+
+  if (needsConfirmation) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-20 pb-12">
+        <div className="max-w-md w-full space-y-8 p-8">
+          <div className="text-center">
+            <div className="text-green-400 text-6xl mb-4">✓</div>
+            <h2 className="text-3xl font-bold text-white mb-2">Check Your Email</h2>
+            <p className="text-gray-300 mb-6">We've sent a confirmation code to your email address.</p>
+            <p className="text-gray-400 text-sm mb-8">Please check your email and click the confirmation link to complete your registration.</p>
+            <div className="space-y-4">
+              <Link
+                href="/auth/signin"
+                className="block w-full py-3 px-4 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-colors text-center"
+              >
+                Back to Sign In
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
