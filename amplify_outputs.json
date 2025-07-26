@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "auth": {
+    "userPoolId": "us-east-2_aurasight",
+    "userPoolClientId": "aurasight-client",
+    "identityPoolId": "us-east-2:aurasight-identity-pool"
+  },
+  "data": {
+    "graphqlEndpoint": "https://aurasight-graphql-endpoint.amazonaws.com/graphql",
+    "region": "us-east-2"
+  }
+} 

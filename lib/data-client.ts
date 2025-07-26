@@ -1,9 +1,9 @@
 "use client"
 
-import { generateClient } from "@aws-amplify/api";
+import { client } from "@/amplify";
 import type { Schema } from "@/amplify/data/resource";
 
-export const dataClient = generateClient<Schema>();
+export const dataClient = client;
 
 // Helper functions for User operations
 export const createUser = async (userData: {

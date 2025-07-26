@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/app/components/Navbar"
 import VantaNetBackground from "@/app/components/vanta-net-background" // Updated import
 import { AuthProvider } from "./auth/AuthContext"
+import "@/amplify" // Import Amplify configuration
 
 const inter = Inter({ subsets: ["latin"] })
 
