@@ -1,83 +1,115 @@
 "use server"
 
-import { verifySession } from "@/lib/dal"
+import { createInfluencer, createBrand } from '@/lib/data-client';
 import { redirect } from "next/navigation"
 import { z } from "zod"
 
 const profileSchema = z.object({
-  displayName: z.string().min(1, "Display name is required"),
-  bio: z.string().min(1, "Bio is required"),
-  location: z.string().optional(),
-  website: z.string().url().optional().or(z.literal("")),
+  userId: z.string().min(1, "User ID is required"),
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Invalid email address"),
   accountType: z.enum(["brand", "influencer"]),
-
-  // Brand fields
+  // Brand-specific fields
   companyName: z.string().optional(),
   industry: z.string().optional(),
   companySize: z.string().optional(),
-  brandValues: z.array(z.string()).optional(),
+  brandValues: z.string().optional(),
   missionStatement: z.string().optional(),
   targetAudience: z.string().optional(),
-
-  // Influencer fields
-  platforms: z.array(z.string()).optional(),
+  // Influencer-specific fields
+  platforms: z.string().optional(),
   followerCount: z.string().optional(),
-  contentCategories: z.array(z.string()).optional(),
-  personalValues: z.array(z.string()).optional(),
+  contentCategories: z.string().optional(),
+  personalValues: z.string().optional(),
   contentStyle: z.string().optional(),
   audienceAge: z.string().optional(),
   audienceGender: z.string().optional(),
-})
+  // Common fields
+  bio: z.string().optional(),
+  location: z.string().optional(),
+  website: z.string().optional(),
+});
 
 export async function createProfile(prevState: any, formData: FormData) {
-  // Verify user is authenticated
-  const { session } = await verifySession()
-
-  // Parse form data
-  const rawData = {
-    displayName: formData.get("displayName"),
-    bio: formData.get("bio"),
-    location: formData.get("location"),
-    website: formData.get("website"),
+  const validatedFields = profileSchema.safeParse({
+    userId: formData.get("userId"),
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    email: formData.get("email"),
     accountType: formData.get("accountType"),
     companyName: formData.get("companyName"),
     industry: formData.get("industry"),
     companySize: formData.get("companySize"),
-    brandValues: formData.getAll("brandValues"),
+    brandValues: formData.get("brandValues"),
     missionStatement: formData.get("missionStatement"),
     targetAudience: formData.get("targetAudience"),
-    platforms: formData.getAll("platforms"),
+    platforms: formData.get("platforms"),
     followerCount: formData.get("followerCount"),
-    contentCategories: formData.getAll("contentCategories"),
-    personalValues: formData.getAll("personalValues"),
+    contentCategories: formData.get("contentCategories"),
+    personalValues: formData.get("personalValues"),
     contentStyle: formData.get("contentStyle"),
     audienceAge: formData.get("audienceAge"),
     audienceGender: formData.get("audienceGender"),
-  }
-
-  const validatedFields = profileSchema.safeParse(rawData)
+    bio: formData.get("bio"),
+    location: formData.get("location"),
+    website: formData.get("website"),
+  });
 
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-    }
+    };
   }
 
+  const data = validatedFields.data;
+
   try {
-    // In a real app, you'd save this to your database
-    console.log("Profile data for user:", session.userId, validatedFields.data)
+    if (data.accountType === "brand") {
+      // Create brand profile
+      const brandData = {
+        userId: data.userId,
+        companyName: data.companyName || `${data.firstName} ${data.lastName}`,
+        displayName: `${data.firstName} ${data.lastName}`,
+        bio: data.bio,
+        location: data.location,
+        website: data.website,
+        industry: data.industry,
+        companySize: data.companySize,
+        brandValues: data.brandValues ? data.brandValues.split(",").map(v => v.trim()).filter(Boolean) : [],
+        missionStatement: data.missionStatement,
+        targetAudience: data.targetAudience,
+      };
 
-    // Simulate API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+      await createBrand(brandData);
+    } else {
+      // Create influencer profile
+      const influencerData = {
+        userId: data.userId,
+        displayName: `${data.firstName} ${data.lastName}`,
+        bio: data.bio,
+        location: data.location,
+        website: data.website,
+        platforms: data.platforms ? data.platforms.split(",").map(v => v.trim()).filter(Boolean) : [],
+        followerCount: data.followerCount,
+        contentCategories: data.contentCategories ? data.contentCategories.split(",").map(v => v.trim()).filter(Boolean) : [],
+        personalValues: data.personalValues ? data.personalValues.split(",").map(v => v.trim()).filter(Boolean) : [],
+        contentStyle: data.contentStyle,
+        audienceAge: data.audienceAge,
+        audienceGender: data.audienceGender,
+      };
 
-    // Redirect to match page
-    redirect("/match")
-  } catch (error) {
-    console.error("Error creating profile:", error)
-    return {
-      errors: {
-        general: ["Failed to create profile. Please try again."],
-      },
+      await createInfluencer(influencerData);
     }
+
+    return {
+      success: true,
+      message: `${data.accountType === "brand" ? "Brand" : "Influencer"} profile created successfully!`,
+    };
+  } catch (error: any) {
+    console.error("Error creating profile:", error);
+    return {
+      error: error.message || "Failed to create profile. Please try again.",
+    };
   }
 }

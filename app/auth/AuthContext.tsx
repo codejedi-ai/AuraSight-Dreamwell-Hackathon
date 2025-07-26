@@ -1,6 +1,7 @@
 "use client"
 
-import { createContext, useContext, useState, type ReactNode } from "react"
+import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import { getCurrentUser, fetchUserAttributes, signOut as amplifySignOut } from '@aws-amplify/auth';
 
 interface User {
   id: string
@@ -14,32 +15,60 @@ interface AuthContextType {
   user: User | null
   setUser: (user: User | null) => void
   loading: boolean
+  signOut: () => Promise<void>
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({
   children,
-  initialUser,
 }: {
   children: ReactNode
-  initialUser: User | null
 }) {
-  const [user, setUser] = useState<User | null>(initialUser)
-  const [loading, setLoading] = useState(false) // Set to false initially as initialUser is provided
+  const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(true)
 
-  // Optional: Re-fetch user on mount or when needed if initialUser is not always fresh
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     setLoading(true);
-  //     const currentUser = await getUser();
-  //     setUser(currentUser);
-  //     setLoading(false);
-  //   };
-  //   fetchUser();
-  // }, []);
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        setLoading(true);
+        const currentUser = await getCurrentUser();
+        const attributes = await fetchUserAttributes();
+        
+        const userData: User = {
+          id: currentUser.userId,
+          email: attributes.email || '',
+          firstName: attributes.given_name,
+          lastName: attributes.family_name,
+          accountType: attributes['custom:accountType'] as 'brand' | 'influencer',
+        };
+        
+        setUser(userData);
+      } catch (error) {
+        console.log('No authenticated user');
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  return <AuthContext.Provider value={{ user, setUser, loading }}>{children}</AuthContext.Provider>
+    fetchUser();
+  }, []);
+
+  const signOut = async () => {
+    try {
+      await amplifySignOut();
+      setUser(null);
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, setUser, loading, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 export function useAuth() {

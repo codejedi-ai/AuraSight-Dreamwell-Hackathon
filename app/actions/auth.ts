@@ -1,31 +1,9 @@
 "use server"
 
-import { createSession, deleteSession } from "@/lib/auth"
+import { signIn as amplifySignIn, signUp as amplifySignUp, signOut as amplifySignOut, confirmSignUp, resetPassword, confirmResetPassword } from '@aws-amplify/auth';
+import { createUser } from '@/lib/data-client';
 import { redirect } from "next/navigation"
 import { z } from "zod"
-
-// Mock user database - in a real app, this would be your actual database
-const users = new Map<
-  string,
-  {
-    id: string
-    email: string
-    password: string
-    firstName?: string
-    lastName?: string
-    accountType?: string
-  }
->()
-
-// Add a default test user for demo purposes
-users.set("test@example.com", {
-  id: "test-user-id",
-  email: "test@example.com",
-  password: "password123",
-  firstName: "Test",
-  lastName: "User",
-  accountType: "brand",
-})
 
 const signInSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -37,7 +15,7 @@ const signUpSchema = z
     firstName: z.string().min(1, "First name is required"),
     lastName: z.string().min(1, "Last name is required"),
     email: z.string().email("Invalid email address"),
-    password: z.string().min(6, "Password must be at least 6 characters"),
+    password: z.string().min(8, "Password must be at least 8 characters"),
     confirmPassword: z.string(),
     accountType: z.enum(["brand", "influencer"]),
   })
@@ -60,35 +38,32 @@ export async function signIn(prevState: any, formData: FormData) {
 
   const { email, password } = validatedFields.data
 
-  // Check if user exists (in a real app, you'd check against your database)
-  const user = users.get(email)
-  if (!user || user.password !== password) {
-    return {
-      errors: {
-        email: ["Invalid email or password"],
-      },
-    }
-  }
-
   try {
-    // Create session
-    await createSession({
-      userId: user.id,
-      email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      accountType: user.accountType,
-    })
-  } catch (error) {
-    console.error("Error creating session:", error)
+    const { isSignedIn, nextStep } = await amplifySignIn({ username: email, password });
+    
+    if (isSignedIn) {
+      redirect("/profile/create");
+    } else if (nextStep.signInStep === 'CONFIRM_SIGN_UP') {
+      return {
+        errors: {
+          email: ["Please check your email and confirm your account before signing in."],
+        },
+      }
+    } else {
+      return {
+        errors: {
+          email: ["Invalid email or password"],
+        },
+      }
+    }
+  } catch (error: any) {
+    console.error("Error signing in:", error);
     return {
       errors: {
-        email: ["Failed to create session. Please try again."],
+        email: [error.message || "Failed to sign in. Please try again."],
       },
     }
   }
-
-  redirect("/profile/create")
 }
 
 export async function signUp(prevState: any, formData: FormData) {
@@ -109,50 +84,80 @@ export async function signUp(prevState: any, formData: FormData) {
 
   const { firstName, lastName, email, password, accountType } = validatedFields.data
 
-  // Check if user already exists
-  if (users.has(email)) {
+  try {
+    const { isSignUpComplete, userId, nextStep } = await amplifySignUp({
+      username: email,
+      password,
+      options: {
+        userAttributes: {
+          email,
+          given_name: firstName,
+          family_name: lastName,
+          'custom:accountType': accountType,
+        },
+      },
+    });
+
+    if (isSignUpComplete) {
+      // Create user record in our database
+      await createUser({
+        email,
+        firstName,
+        lastName,
+        accountType,
+      });
+
+      redirect("/auth/signin");
+    } else if (nextStep.signUpStep === 'CONFIRM_SIGN_UP') {
+      return {
+        success: true,
+        message: "Account created successfully! Please check your email to confirm your account before signing in.",
+      }
+    }
+  } catch (error: any) {
+    console.error("Error creating user:", error);
     return {
       errors: {
-        email: ["User with this email already exists"],
+        email: [error.message || "Failed to create account. Please try again."],
+      },
+    }
+  }
+}
+
+export async function confirmSignUpAction(prevState: any, formData: FormData) {
+  const email = formData.get("email") as string;
+  const code = formData.get("code") as string;
+
+  if (!email || !code) {
+    return {
+      errors: {
+        email: ["Email and confirmation code are required"],
       },
     }
   }
 
   try {
-    // Create user (in a real app, you'd save to your database)
-    const userId = crypto.randomUUID()
-    users.set(email, {
-      id: userId,
-      email,
-      password, // In a real app, you'd hash this password
-      firstName,
-      lastName,
-      accountType,
-    })
+    const { isSignUpComplete } = await confirmSignUp({
+      username: email,
+      confirmationCode: code,
+    });
 
-    // Create session
-    await createSession({
-      userId,
-      email,
-      firstName,
-      lastName,
-      accountType,
-    })
-  } catch (error) {
-    console.error("Error creating user:", error)
+    if (isSignUpComplete) {
+      redirect("/auth/signin");
+    }
+  } catch (error: any) {
+    console.error("Error confirming sign up:", error);
     return {
       errors: {
-        email: ["Failed to create account. Please try again."],
+        email: [error.message || "Failed to confirm account. Please try again."],
       },
     }
   }
-
-  redirect("/profile/create")
 }
 
 export async function signOut() {
   try {
-    await deleteSession()
+    await amplifySignOut();
   } catch (error) {
     console.error("Error signing out:", error)
   }
@@ -170,11 +175,52 @@ export async function forgotPassword(prevState: any, formData: FormData) {
     }
   }
 
-  // In a real app, you'd send a password reset email
-  console.log(`Password reset email would be sent to: ${email}`)
+  try {
+    await resetPassword({ username: email });
+    return {
+      success: true,
+      message: "Password reset email sent successfully. Please check your email.",
+    }
+  } catch (error: any) {
+    console.error("Error sending password reset:", error);
+    return {
+      errors: {
+        email: [error.message || "Failed to send password reset email. Please try again."],
+      },
+    }
+  }
+}
 
-  return {
-    success: true,
-    message: "Password reset email sent successfully",
+export async function confirmResetPasswordAction(prevState: any, formData: FormData) {
+  const email = formData.get("email") as string;
+  const code = formData.get("code") as string;
+  const newPassword = formData.get("newPassword") as string;
+
+  if (!email || !code || !newPassword) {
+    return {
+      errors: {
+        email: ["Email, confirmation code, and new password are required"],
+      },
+    }
+  }
+
+  try {
+    await confirmResetPassword({
+      username: email,
+      confirmationCode: code,
+      newPassword,
+    });
+
+    return {
+      success: true,
+      message: "Password reset successfully. You can now sign in with your new password.",
+    }
+  } catch (error: any) {
+    console.error("Error confirming password reset:", error);
+    return {
+      errors: {
+        email: [error.message || "Failed to reset password. Please try again."],
+      },
+    }
   }
 }
