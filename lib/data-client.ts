@@ -1,6 +1,6 @@
 "use client"
 
-import { generateClient } from "aws-amplify/data";
+import { generateClient } from "@aws-amplify/api";
 import type { Schema } from "@/amplify/data/resource";
 
 export const dataClient = generateClient<Schema>();
@@ -85,7 +85,7 @@ export const getInfluencer = async (id: string) => {
 export const listInfluencers = async () => {
   try {
     const influencers = await dataClient.models.Influencer.list();
-    return influencers.data.map(influencer => ({
+    return influencers.data.map((influencer: any) => ({
       ...influencer,
       platforms: influencer.platforms ? JSON.parse(influencer.platforms) : [],
       contentCategories: influencer.contentCategories ? JSON.parse(influencer.contentCategories) : [],
@@ -151,7 +151,7 @@ export const getBrand = async (id: string) => {
 export const listBrands = async () => {
   try {
     const brands = await dataClient.models.Brand.list();
-    return brands.data.map(brand => ({
+    return brands.data.map((brand: any) => ({
       ...brand,
       brandValues: brand.brandValues ? JSON.parse(brand.brandValues) : [],
     }));
@@ -182,7 +182,7 @@ export const createMatchRequest = async (matchData: {
   const processedData = {
     ...matchData,
     brandValues: matchData.brandValues ? JSON.stringify(matchData.brandValues) : undefined,
-    status: 'pending',
+    status: 'pending' as const,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
@@ -209,7 +209,7 @@ export const getMatchRequest = async (id: string) => {
 export const listMatchRequests = async () => {
   try {
     const matchRequests = await dataClient.models.MatchRequest.list();
-    return matchRequests.data.map(matchRequest => ({
+    return matchRequests.data.map((matchRequest: any) => ({
       ...matchRequest,
       brandValues: matchRequest.brandValues ? JSON.parse(matchRequest.brandValues) : [],
       results: matchRequest.results ? JSON.parse(matchRequest.results) : null,

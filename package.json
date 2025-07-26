@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@aws-amplify/api": "^6.3.16",
     "@aws-amplify/auth": "^6.14.0",
     "@aws-amplify/backend": "latest",
     "@radix-ui/react-accordion": "latest",
