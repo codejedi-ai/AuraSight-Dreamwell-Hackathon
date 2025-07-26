@@ -1,182 +1,55 @@
-"use client"
-
-import type React from "react"
-import { useState, type FormEvent } from "react"
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-    isInfluencer: false,
-    isBrand: false,
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<{
-    success?: boolean
-    message?: string
-  } | null>(null)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
-    }))
-  }
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
-
-    try {
-      console.log("Submitting form data:", formData)
-
-      // In a real app, you would have an API endpoint for this.
-      // For now, we simulate a network request.
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      setSubmitStatus({
-        success: true,
-        message: "Thank you for your message! We will get back to you soon.",
-      })
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-        isInfluencer: false,
-        isBrand: false,
-      })
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      setSubmitStatus({
-        success: false,
-        message: error instanceof Error ? error.message : "Failed to submit form",
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
   return (
-    <div className="bg-gray-800 p-8 rounded-lg shadow-lg mb-12 border border-gray-700">
-      <p className="text-lg text-gray-300 mb-8 text-center">
-        Ready to discover the perfect match for your brand or showcase your unique influencer vibe? Get in touch with
-        our team today.
-      </p>
-
-      <form className="space-y-6" onSubmit={handleSubmit}>
-        {submitStatus && (
-          <div
-            className={`p-4 rounded-md ${submitStatus.success ? "bg-green-900 text-green-200" : "bg-red-900 text-red-200"}`}
-          >
-            <p>{submitStatus.message}</p>
-          </div>
-        )}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
-              placeholder="Your name"
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
-              placeholder="your.email@example.com"
-              required
-            />
-          </div>
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-card/70 backdrop-blur-md rounded-lg shadow-lg my-12">
+      <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+        <div className="space-y-3">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">Get in Touch</h2>
+          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Have questions or want to learn more about AuraSight? Contact us!
+          </p>
         </div>
-
-        <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
-            Subject
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
-            placeholder="What is this regarding?"
-            required
-          />
+        <div className="mx-auto w-full max-w-sm space-y-2">
+          <form className="flex flex-col gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="name" className="text-foreground">
+                Name
+              </Label>
+              <Input
+                id="name"
+                placeholder="Enter your name"
+                className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="email" className="text-foreground">
+                Email
+              </Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="Enter your email"
+                className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="message" className="text-foreground">
+                Message
+              </Label>
+              <Textarea
+                id="message"
+                placeholder="Enter your message"
+                className="min-h-[100px] bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
+              />
+            </div>
+            <Button type="submit">Send Message</Button>
+          </form>
         </div>
-
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={6}
-            className="w-full px-4 py-2 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 bg-gray-700 text-white"
-            placeholder="Tell us more about your needs..."
-            required
-          ></textarea>
-        </div>
-
-        <div>
-          <label className="flex items-center">
-            <input
-              type="checkbox"
-              name="isInfluencer"
-              checked={formData.isInfluencer}
-              onChange={handleChange}
-              className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-600 rounded bg-gray-700"
-            />
-            <span className="ml-2 text-sm text-gray-300">I&apos;m an influencer looking to connect with brands</span>
-          </label>
-
-          <label className="flex items-center mt-2">
-            <input
-              type="checkbox"
-              name="isBrand"
-              checked={formData.isBrand}
-              onChange={handleChange}
-              className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-600 rounded bg-gray-700"
-            />
-            <span className="ml-2 text-sm text-gray-300">I represent a brand looking for influencers</span>
-          </label>
-        </div>
-
-        <div>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-2 px-4 rounded-md hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </div>
-      </form>
-    </div>
+      </div>
+    </section>
   )
 }

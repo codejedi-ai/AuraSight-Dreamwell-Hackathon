@@ -7,74 +7,11 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  User: a
+  Todo: a
     .model({
-      email: a.string().required(),
-      firstName: a.string(),
-      lastName: a.string(),
-      accountType: a.enum(['brand', 'influencer']),
-      displayName: a.string(),
-      bio: a.string(),
-      location: a.string(),
-      website: a.string(),
-      companyName: a.string(),
-      industry: a.string(),
-      companySize: a.string(),
-      brandValues: a.string(), // Store as JSON string
-      missionStatement: a.string(),
-      targetAudience: a.string(),
-      platforms: a.string(), // Store as JSON string
-      followerCount: a.string(),
-      contentCategories: a.string(), // Store as JSON string
-      personalValues: a.string(), // Store as JSON string
-      contentStyle: a.string(),
-      audienceAge: a.string(),
-      audienceGender: a.string(),
+      content: a.string(),
     })
-    .authorization((allow) => [
-      allow.owner(),
-    ]),
-
-  Profile: a
-    .model({
-      userId: a.string().required(),
-      displayName: a.string().required(),
-      bio: a.string(),
-      location: a.string(),
-      website: a.string(),
-      accountType: a.enum(['brand', 'influencer']),
-      companyName: a.string(),
-      industry: a.string(),
-      companySize: a.string(),
-      brandValues: a.string(), // Store as JSON string
-      missionStatement: a.string(),
-      targetAudience: a.string(),
-      platforms: a.string(), // Store as JSON string
-      followerCount: a.string(),
-      contentCategories: a.string(), // Store as JSON string
-      personalValues: a.string(), // Store as JSON string
-      contentStyle: a.string(),
-      audienceAge: a.string(),
-      audienceGender: a.string(),
-    })
-    .authorization((allow) => [
-      allow.owner(),
-    ]),
-
-  MatchRequest: a
-    .model({
-      userId: a.string().required(),
-      brand: a.string().required(),
-      influencer: a.string().required(),
-      brandValues: a.string(), // Store as JSON string
-      missionStatement: a.string(),
-      targetEmotion: a.string(),
-      status: a.enum(['pending', 'processing', 'completed', 'failed']),
-      results: a.string(), // JSON string of results
-    })
-    .authorization((allow) => [
-      allow.owner(),
-    ]),
+    .authorization((allow) => [allow.guest()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;

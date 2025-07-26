@@ -1,51 +1,40 @@
 import type React from "react"
 import type { Metadata } from "next"
-import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 import "./globals.css"
-import Navbar from "./components/Navbar"
+import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/app/components/Navbar"
+import VantaNetBackground from "@/app/components/vanta-net-background" // Updated import
 import { AuthProvider } from "./auth/AuthContext"
-import "@/amplify"
+import { getUser } from "@/lib/dal"
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-})
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-})
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AuraSight - Influencer Aura Management Platform",
-  description:
-    "AuraSight tracks influencer auras and suggests the perfect vibe for your marketing campaigns through advanced brand discovery and social media analysis.",
+  title: "AuraSight",
+  description: "Connecting brands and influencers",
     generator: 'v0.dev'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const user = await getUser()
+
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 text-white`}
-      >
-        <AuthProvider>
-          <Navbar />
-          <main className="container mx-auto px-4 py-8">{children}</main>
-          <footer className="bg-gray-800 text-white p-6 mt-12">
-            <div className="container mx-auto text-center">
-              <p>© {new Date().getFullYear()} AuraSight. All rights reserved.</p>
-              <p className="mt-2 text-gray-400 text-sm">
-                Advanced influencer aura tracking and brand resonance optimization.
-              </p>
-            </div>
-          </footer>
-        </AuthProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <VantaNetBackground /> {/* Using the new Net background */}
+          <div className="relative z-10 min-h-screen bg-background/70 backdrop-blur-sm">
+            <AuthProvider initialUser={user}>
+              <Navbar />
+              {children}
+            </AuthProvider>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
