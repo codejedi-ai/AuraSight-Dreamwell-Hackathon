@@ -1,5 +1,6 @@
 "use client"
 
+import "@/amplify" // Import Amplify configuration first
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
 import { getCurrentUser, fetchUserAttributes, signOut as amplifySignOut } from '@aws-amplify/auth';
 

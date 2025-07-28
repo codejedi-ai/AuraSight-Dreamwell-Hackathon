@@ -1,5 +1,6 @@
 "use client"
 
+import "@/amplify" // Import Amplify configuration first
 import { useState } from 'react'
 import { signIn, signUp, getCurrentUser } from '@aws-amplify/auth'
 
