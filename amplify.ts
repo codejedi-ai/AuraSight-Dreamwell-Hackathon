@@ -6,9 +6,9 @@ import type { Schema } from './amplify/data/resource';
 Amplify.configure({
   Auth: {
     Cognito: {
-      userPoolId: 'us-east-2_dELxg3zLc',
-      userPoolClientId: '4mu9955gchebq3etpvu504b5q6',
-      identityPoolId: 'us-east-2:add80c06-1d98-4306-9647-e2fa7c97c12c',
+      userPoolId: 'us-east-1_snDsTRJao',
+      userPoolClientId: 'mlmdtd1m0oft5tfu9onc2cgug',
+      identityPoolId: 'us-east-1:5c7aee37-ba06-4240-ae73-50536f25153a',
       signUpVerificationMethod: 'code',
       loginWith: {
         email: true,
@@ -17,8 +17,8 @@ Amplify.configure({
   },
   API: {
     GraphQL: {
-      endpoint: 'https://e7tr74u2gffl7fkntmuzat6f6a.appsync-api.us-east-2.amazonaws.com/graphql',
-      region: 'us-east-2',
+      endpoint: 'https://tjp54xmqyzep3kzphk7rxxx7p4.appsync-api.us-east-1.amazonaws.com/graphql',
+      region: 'us-east-1',
       defaultAuthMode: 'userPool',
     },
   },

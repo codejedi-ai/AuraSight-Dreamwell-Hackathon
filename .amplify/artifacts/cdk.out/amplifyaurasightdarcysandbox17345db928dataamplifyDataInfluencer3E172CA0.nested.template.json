@@ -349,7 +349,7 @@
   }
  },
  "Resources": {
-  "MatchRequestTable": {
+  "InfluencerTable": {
    "Type": "Custom::AmplifyDynamoDBTable",
    "Properties": {
     "ServiceToken": {
@@ -359,7 +359,7 @@
      "Fn::Join": [
       "",
       [
-       "MatchRequest-",
+       "Influencer-",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -428,10 +428,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestTable/Default/Default"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/InfluencerTable/Default/Default"
    }
   },
-  "MatchRequestIAMRole89CC1A43": {
+  "InfluencerIAMRoleCBB3DEFF": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -475,7 +475,7 @@
               "Fn::Join": [
                "",
                [
-                "MatchRequest-",
+                "Influencer-",
                 {
                  "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
                 },
@@ -494,7 +494,7 @@
               "Fn::Join": [
                "",
                [
-                "MatchRequest-",
+                "Influencer-",
                 {
                  "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
                 },
@@ -517,7 +517,7 @@
      "Fn::Join": [
       "",
       [
-       "MatchRequestIAMRole101dc1-",
+       "InfluencerIAMRole1541ed-",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -543,10 +543,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestIAMRole/Resource"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/InfluencerIAMRole/Resource"
    }
   },
-  "MatchRequestDataSource": {
+  "InfluencerDataSource": {
    "Type": "AWS::AppSync::DataSource",
    "Properties": {
     "ApiId": {
@@ -570,7 +570,7 @@
              ":",
              {
               "Fn::GetAtt": [
-               "MatchRequestTable",
+               "InfluencerTable",
                "TableArn"
               ]
              }
@@ -583,25 +583,25 @@
       ]
      }
     },
-    "Name": "MatchRequestTable",
+    "Name": "InfluencerTable",
     "ServiceRoleArn": {
      "Fn::GetAtt": [
-      "MatchRequestIAMRole89CC1A43",
+      "InfluencerIAMRoleCBB3DEFF",
       "Arn"
      ]
     },
     "Type": "AMAZON_DYNAMODB"
    },
    "DependsOn": [
-    "MatchRequestIAMRole89CC1A43"
+    "InfluencerIAMRoleCBB3DEFF"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestDataSource/Resource"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/InfluencerDataSource/Resource"
    }
   },
-  "QuerygetMatchRequestauth0FunctionQuerygetMatchRequestauth0FunctionAppSyncFunction187C11FD": {
+  "QuerygetInfluencerauth0FunctionQuerygetInfluencerauth0FunctionAppSyncFunctionEF5687CD": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -611,7 +611,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerygetMatchRequestauth0Function",
+    "Name": "QuerygetInfluencerauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
     },
@@ -620,10 +620,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerygetMatchRequestauth0Function/QuerygetMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/QuerygetInfluencerauth0Function/QuerygetInfluencerauth0Function.AppSyncFunction"
    }
   },
-  "QuerygetMatchRequestpostAuth0FunctionQuerygetMatchRequestpostAuth0FunctionAppSyncFunction7C94DCC5": {
+  "QuerygetInfluencerpostAuth0FunctionQuerygetInfluencerpostAuth0FunctionAppSyncFunctionAE7FD6F8": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -633,7 +633,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerygetMatchRequestpostAuth0Function",
+    "Name": "QuerygetInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -642,10 +642,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerygetMatchRequestpostAuth0Function/QuerygetMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/QuerygetInfluencerpostAuth0Function/QuerygetInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "QueryGetMatchRequestDataResolverFnQueryGetMatchRequestDataResolverFnAppSyncFunction0CBED20A": {
+  "QueryGetInfluencerDataResolverFnQueryGetInfluencerDataResolverFnAppSyncFunctionF4D98418": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -653,12 +653,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QueryGetMatchRequestDataResolverFn",
+    "Name": "QueryGetInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
     },
@@ -667,39 +667,39 @@
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QueryGetMatchRequestDataResolverFn/QueryGetMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/QueryGetInfluencerDataResolverFn/QueryGetInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "GetMatchRequestResolver": {
+  "GetInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "getMatchRequest",
+    "FieldName": "getInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "QuerygetMatchRequestauth0FunctionQuerygetMatchRequestauth0FunctionAppSyncFunction187C11FD",
+        "QuerygetInfluencerauth0FunctionQuerygetInfluencerauth0FunctionAppSyncFunctionEF5687CD",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QuerygetMatchRequestpostAuth0FunctionQuerygetMatchRequestpostAuth0FunctionAppSyncFunction7C94DCC5",
+        "QuerygetInfluencerpostAuth0FunctionQuerygetInfluencerpostAuth0FunctionAppSyncFunctionAE7FD6F8",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QueryGetMatchRequestDataResolverFnQueryGetMatchRequestDataResolverFnAppSyncFunction0CBED20A",
+        "QueryGetInfluencerDataResolverFnQueryGetInfluencerDataResolverFnAppSyncFunctionF4D98418",
         "FunctionId"
        ]
       }
@@ -709,7 +709,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -728,7 +728,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "MatchRequestTable",
+                 "InfluencerTable",
                  "TableArn"
                 ]
                }
@@ -778,10 +778,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/queryGetMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/queryGetInfluencerResolver"
    }
   },
-  "QuerylistMatchRequestsauth0FunctionQuerylistMatchRequestsauth0FunctionAppSyncFunction4FF9D38D": {
+  "QuerylistInfluencersauth0FunctionQuerylistInfluencersauth0FunctionAppSyncFunctionDD0EFFD7": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -791,7 +791,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerylistMatchRequestsauth0Function",
+    "Name": "QuerylistInfluencersauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
     },
@@ -800,10 +800,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerylistMatchRequestsauth0Function/QuerylistMatchRequestsauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/QuerylistInfluencersauth0Function/QuerylistInfluencersauth0Function.AppSyncFunction"
    }
   },
-  "QuerylistMatchRequestspostAuth0FunctionQuerylistMatchRequestspostAuth0FunctionAppSyncFunction37B26ED2": {
+  "QuerylistInfluencerspostAuth0FunctionQuerylistInfluencerspostAuth0FunctionAppSyncFunction0CFCBBF0": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -813,7 +813,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QuerylistMatchRequestspostAuth0Function",
+    "Name": "QuerylistInfluencerspostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -822,10 +822,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QuerylistMatchRequestspostAuth0Function/QuerylistMatchRequestspostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/QuerylistInfluencerspostAuth0Function/QuerylistInfluencerspostAuth0Function.AppSyncFunction"
    }
   },
-  "QueryListMatchRequestsDataResolverFnQueryListMatchRequestsDataResolverFnAppSyncFunction1242C221": {
+  "QueryListInfluencersDataResolverFnQueryListInfluencersDataResolverFnAppSyncFunctionFB4C78FA": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -833,12 +833,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "QueryListMatchRequestsDataResolverFn",
+    "Name": "QueryListInfluencersDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
     },
@@ -847,39 +847,39 @@
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/QueryListMatchRequestsDataResolverFn/QueryListMatchRequestsDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/QueryListInfluencersDataResolverFn/QueryListInfluencersDataResolverFn.AppSyncFunction"
    }
   },
-  "ListMatchRequestResolver": {
+  "ListInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "listMatchRequests",
+    "FieldName": "listInfluencers",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "QuerylistMatchRequestsauth0FunctionQuerylistMatchRequestsauth0FunctionAppSyncFunction4FF9D38D",
+        "QuerylistInfluencersauth0FunctionQuerylistInfluencersauth0FunctionAppSyncFunctionDD0EFFD7",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QuerylistMatchRequestspostAuth0FunctionQuerylistMatchRequestspostAuth0FunctionAppSyncFunction37B26ED2",
+        "QuerylistInfluencerspostAuth0FunctionQuerylistInfluencerspostAuth0FunctionAppSyncFunction0CFCBBF0",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "QueryListMatchRequestsDataResolverFnQueryListMatchRequestsDataResolverFnAppSyncFunction1242C221",
+        "QueryListInfluencersDataResolverFnQueryListInfluencersDataResolverFnAppSyncFunctionFB4C78FA",
         "FunctionId"
        ]
       }
@@ -889,7 +889,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listMatchRequests\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listInfluencers\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -908,7 +908,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "MatchRequestTable",
+                 "InfluencerTable",
                  "TableArn"
                 ]
                }
@@ -958,10 +958,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/queryListMatchRequestsResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/queryListInfluencersResolver"
    }
   },
-  "MutationcreateMatchRequestinit0FunctionMutationcreateMatchRequestinit0FunctionAppSyncFunctionD378B255": {
+  "MutationcreateInfluencerinit0FunctionMutationcreateInfluencerinit0FunctionAppSyncFunction446DFE55": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -971,7 +971,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateMatchRequestinit0Function",
+    "Name": "MutationcreateInfluencerinit0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
     },
@@ -980,10 +980,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationcreateMatchRequestinit0Function/MutationcreateMatchRequestinit0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationcreateInfluencerinit0Function/MutationcreateInfluencerinit0Function.AppSyncFunction"
    }
   },
-  "MutationcreateMatchRequestauth0FunctionMutationcreateMatchRequestauth0FunctionAppSyncFunctionA5B8D001": {
+  "MutationcreateInfluencerinit1FunctionMutationcreateInfluencerinit1FunctionAppSyncFunctionAA7031B0": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -993,19 +993,19 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateMatchRequestauth0Function",
+    "Name": "MutationcreateInfluencerinit1Function",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fa848e4fd14de1d4e933daa409ca2540703da57642dc0435235fffc4e7aebdaa.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/59124f12c3c78d08e277a7ccedcef02b1dcf901f8986de0f5fb56efa7944708d.vtl"
     },
     "ResponseMappingTemplate": "$util.toJson({})"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationcreateMatchRequestauth0Function/MutationcreateMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationcreateInfluencerinit1Function/MutationcreateInfluencerinit1Function.AppSyncFunction"
    }
   },
-  "MutationcreateMatchRequestpostAuth0FunctionMutationcreateMatchRequestpostAuth0FunctionAppSyncFunctionC52AD81F": {
+  "MutationcreateInfluencerauth0FunctionMutationcreateInfluencerauth0FunctionAppSyncFunctionB5F4631D": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1015,7 +1015,29 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationcreateMatchRequestpostAuth0Function",
+    "Name": "MutationcreateInfluencerauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a0ab3d6f7d2da9351dc161c3896ea00d04750aa2072bedc426681d51aff3c600.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationcreateInfluencerauth0Function/MutationcreateInfluencerauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateInfluencerpostAuth0FunctionMutationcreateInfluencerpostAuth0FunctionAppSyncFunctionB3C7F7DA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1024,10 +1046,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationcreateMatchRequestpostAuth0Function/MutationcreateMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationcreateInfluencerpostAuth0Function/MutationcreateInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationCreateMatchRequestDataResolverFnMutationCreateMatchRequestDataResolverFnAppSyncFunctionA2724AE4": {
+  "MutationCreateInfluencerDataResolverFnMutationCreateInfluencerDataResolverFnAppSyncFunction59059EDD": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1035,59 +1057,65 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationCreateMatchRequestDataResolverFn",
+    "Name": "MutationCreateInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3d2b09a8fe69a0880314f560c3ed0dec4116f7ea18c9331f02e89036b1e00ae0.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d0559338e10a81bbdf8f7f397aaa6b9c6e9371f88db7e2d4e73ea0490b7de1cf.vtl"
     },
     "ResponseMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationCreateMatchRequestDataResolverFn/MutationCreateMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationCreateInfluencerDataResolverFn/MutationCreateInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "CreateMatchRequestResolver": {
+  "CreateInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "createMatchRequest",
+    "FieldName": "createInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationcreateMatchRequestinit0FunctionMutationcreateMatchRequestinit0FunctionAppSyncFunctionD378B255",
+        "MutationcreateInfluencerinit0FunctionMutationcreateInfluencerinit0FunctionAppSyncFunction446DFE55",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationcreateMatchRequestauth0FunctionMutationcreateMatchRequestauth0FunctionAppSyncFunctionA5B8D001",
+        "MutationcreateInfluencerinit1FunctionMutationcreateInfluencerinit1FunctionAppSyncFunctionAA7031B0",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationcreateMatchRequestpostAuth0FunctionMutationcreateMatchRequestpostAuth0FunctionAppSyncFunctionC52AD81F",
+        "MutationcreateInfluencerauth0FunctionMutationcreateInfluencerauth0FunctionAppSyncFunctionB5F4631D",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationCreateMatchRequestDataResolverFnMutationCreateMatchRequestDataResolverFnAppSyncFunctionA2724AE4",
+        "MutationcreateInfluencerpostAuth0FunctionMutationcreateInfluencerpostAuth0FunctionAppSyncFunctionB3C7F7DA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateInfluencerDataResolverFnMutationCreateInfluencerDataResolverFnAppSyncFunction59059EDD",
         "FunctionId"
        ]
       }
@@ -1097,7 +1125,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -1116,7 +1144,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "MatchRequestTable",
+                 "InfluencerTable",
                  "TableArn"
                 ]
                }
@@ -1166,10 +1194,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/mutationCreateMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/mutationCreateInfluencerResolver"
    }
   },
-  "MutationupdateMatchRequestinit0FunctionMutationupdateMatchRequestinit0FunctionAppSyncFunction00772410": {
+  "MutationupdateInfluencerinit0FunctionMutationupdateInfluencerinit0FunctionAppSyncFunction2300044E": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1179,7 +1207,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateMatchRequestinit0Function",
+    "Name": "MutationupdateInfluencerinit0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
     },
@@ -1188,10 +1216,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationupdateMatchRequestinit0Function/MutationupdateMatchRequestinit0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationupdateInfluencerinit0Function/MutationupdateInfluencerinit0Function.AppSyncFunction"
    }
   },
-  "MutationupdateMatchRequestauth0FunctionMutationupdateMatchRequestauth0FunctionAppSyncFunctionA2EC9675": {
+  "MutationupdateInfluencerauth0FunctionMutationupdateInfluencerauth0FunctionAppSyncFunctionCA8056B9": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1199,29 +1227,29 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateMatchRequestauth0Function",
+    "Name": "MutationupdateInfluencerauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
     "ResponseMappingTemplateS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7d36132058addffe82716b0cd58c35e402e418f63d8b1c27707d37c3d7c5380a.vtl"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/928629149d83076e15b37950670f464687fb14625d0924640f1ea935d8b9573e.vtl"
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationupdateMatchRequestauth0Function/MutationupdateMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationupdateInfluencerauth0Function/MutationupdateInfluencerauth0Function.AppSyncFunction"
    }
   },
-  "MutationupdateMatchRequestpostAuth0FunctionMutationupdateMatchRequestpostAuth0FunctionAppSyncFunction8B4EC0E8": {
+  "MutationupdateInfluencerpostAuth0FunctionMutationupdateInfluencerpostAuth0FunctionAppSyncFunction83CF31D9": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1231,7 +1259,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationupdateMatchRequestpostAuth0Function",
+    "Name": "MutationupdateInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1240,10 +1268,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationupdateMatchRequestpostAuth0Function/MutationupdateMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationupdateInfluencerpostAuth0Function/MutationupdateInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationUpdateMatchRequestDataResolverFnMutationUpdateMatchRequestDataResolverFnAppSyncFunction32B9F18F": {
+  "MutationUpdateInfluencerDataResolverFnMutationUpdateInfluencerDataResolverFnAppSyncFunction2FCEDD3D": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1251,12 +1279,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationUpdateMatchRequestDataResolverFn",
+    "Name": "MutationUpdateInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
     },
@@ -1265,45 +1293,45 @@
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationUpdateMatchRequestDataResolverFn/MutationUpdateMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationUpdateInfluencerDataResolverFn/MutationUpdateInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "UpdateMatchRequestResolver": {
+  "UpdateInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "updateMatchRequest",
+    "FieldName": "updateInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationupdateMatchRequestinit0FunctionMutationupdateMatchRequestinit0FunctionAppSyncFunction00772410",
+        "MutationupdateInfluencerinit0FunctionMutationupdateInfluencerinit0FunctionAppSyncFunction2300044E",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationupdateMatchRequestauth0FunctionMutationupdateMatchRequestauth0FunctionAppSyncFunctionA2EC9675",
+        "MutationupdateInfluencerauth0FunctionMutationupdateInfluencerauth0FunctionAppSyncFunctionCA8056B9",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationupdateMatchRequestpostAuth0FunctionMutationupdateMatchRequestpostAuth0FunctionAppSyncFunction8B4EC0E8",
+        "MutationupdateInfluencerpostAuth0FunctionMutationupdateInfluencerpostAuth0FunctionAppSyncFunction83CF31D9",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationUpdateMatchRequestDataResolverFnMutationUpdateMatchRequestDataResolverFnAppSyncFunction32B9F18F",
+        "MutationUpdateInfluencerDataResolverFnMutationUpdateInfluencerDataResolverFnAppSyncFunction2FCEDD3D",
         "FunctionId"
        ]
       }
@@ -1313,7 +1341,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -1332,7 +1360,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "MatchRequestTable",
+                 "InfluencerTable",
                  "TableArn"
                 ]
                }
@@ -1382,10 +1410,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/mutationUpdateMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/mutationUpdateInfluencerResolver"
    }
   },
-  "MutationdeleteMatchRequestauth0FunctionMutationdeleteMatchRequestauth0FunctionAppSyncFunctionE866BAA3": {
+  "MutationdeleteInfluencerauth0FunctionMutationdeleteInfluencerauth0FunctionAppSyncFunctionCCE2A658": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1393,12 +1421,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationdeleteMatchRequestauth0Function",
+    "Name": "MutationdeleteInfluencerauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
     },
@@ -1407,15 +1435,15 @@
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationdeleteMatchRequestauth0Function/MutationdeleteMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationdeleteInfluencerauth0Function/MutationdeleteInfluencerauth0Function.AppSyncFunction"
    }
   },
-  "MutationdeleteMatchRequestpostAuth0FunctionMutationdeleteMatchRequestpostAuth0FunctionAppSyncFunctionE6411FF7": {
+  "MutationdeleteInfluencerpostAuth0FunctionMutationdeleteInfluencerpostAuth0FunctionAppSyncFunctionF2403073": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1425,7 +1453,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationdeleteMatchRequestpostAuth0Function",
+    "Name": "MutationdeleteInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1434,10 +1462,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationdeleteMatchRequestpostAuth0Function/MutationdeleteMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationdeleteInfluencerpostAuth0Function/MutationdeleteInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "MutationDeleteMatchRequestDataResolverFnMutationDeleteMatchRequestDataResolverFnAppSyncFunctionBB1402C7": {
+  "MutationDeleteInfluencerDataResolverFnMutationDeleteInfluencerDataResolverFnAppSyncFunction7BB85E57": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1445,12 +1473,12 @@
     },
     "DataSourceName": {
      "Fn::GetAtt": [
-      "MatchRequestDataSource",
+      "InfluencerDataSource",
       "Name"
      ]
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MutationDeleteMatchRequestDataResolverFn",
+    "Name": "MutationDeleteInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
     },
@@ -1459,39 +1487,39 @@
     }
    },
    "DependsOn": [
-    "MatchRequestDataSource"
+    "InfluencerDataSource"
    ],
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MutationDeleteMatchRequestDataResolverFn/MutationDeleteMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/MutationDeleteInfluencerDataResolverFn/MutationDeleteInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "DeleteMatchRequestResolver": {
+  "DeleteInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "deleteMatchRequest",
+    "FieldName": "deleteInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MutationdeleteMatchRequestauth0FunctionMutationdeleteMatchRequestauth0FunctionAppSyncFunctionE866BAA3",
+        "MutationdeleteInfluencerauth0FunctionMutationdeleteInfluencerauth0FunctionAppSyncFunctionCCE2A658",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationdeleteMatchRequestpostAuth0FunctionMutationdeleteMatchRequestpostAuth0FunctionAppSyncFunctionE6411FF7",
+        "MutationdeleteInfluencerpostAuth0FunctionMutationdeleteInfluencerpostAuth0FunctionAppSyncFunctionF2403073",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "MutationDeleteMatchRequestDataResolverFnMutationDeleteMatchRequestDataResolverFnAppSyncFunctionBB1402C7",
+        "MutationDeleteInfluencerDataResolverFnMutationDeleteInfluencerDataResolverFnAppSyncFunction7BB85E57",
         "FunctionId"
        ]
       }
@@ -1501,7 +1529,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -1520,7 +1548,7 @@
                ":",
                {
                 "Fn::GetAtt": [
-                 "MatchRequestTable",
+                 "InfluencerTable",
                  "TableArn"
                 ]
                }
@@ -1570,10 +1598,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/mutationDeleteMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/mutationDeleteInfluencerResolver"
    }
   },
-  "SubscriptiononCreateMatchRequestauth0FunctionSubscriptiononCreateMatchRequestauth0FunctionAppSyncFunction2646666A": {
+  "SubscriptiononCreateInfluencerauth0FunctionSubscriptiononCreateInfluencerauth0FunctionAppSyncFunctionDFD351FD": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1583,7 +1611,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononCreateMatchRequestauth0Function",
+    "Name": "SubscriptiononCreateInfluencerauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
     },
@@ -1592,10 +1620,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononCreateMatchRequestauth0Function/SubscriptiononCreateMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptiononCreateInfluencerauth0Function/SubscriptiononCreateInfluencerauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononCreateMatchRequestpostAuth0FunctionSubscriptiononCreateMatchRequestpostAuth0FunctionAppSyncFunctionA8BBF023": {
+  "SubscriptiononCreateInfluencerpostAuth0FunctionSubscriptiononCreateInfluencerpostAuth0FunctionAppSyncFunctionB71AEFEA": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1605,7 +1633,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononCreateMatchRequestpostAuth0Function",
+    "Name": "SubscriptiononCreateInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1614,10 +1642,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononCreateMatchRequestpostAuth0Function/SubscriptiononCreateMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptiononCreateInfluencerpostAuth0Function/SubscriptiononCreateInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnCreateMatchRequestDataResolverFnSubscriptionOnCreateMatchRequestDataResolverFnAppSyncFunctionDC743485": {
+  "SubscriptionOnCreateInfluencerDataResolverFnSubscriptionOnCreateInfluencerDataResolverFnAppSyncFunctionBE937643": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1627,7 +1655,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnCreateMatchRequestDataResolverFn",
+    "Name": "SubscriptionOnCreateInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1638,34 +1666,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptionOnCreateMatchRequestDataResolverFn/SubscriptionOnCreateMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptionOnCreateInfluencerDataResolverFn/SubscriptionOnCreateInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononCreateMatchRequestResolver": {
+  "SubscriptiononCreateInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "onCreateMatchRequest",
+    "FieldName": "onCreateInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononCreateMatchRequestauth0FunctionSubscriptiononCreateMatchRequestauth0FunctionAppSyncFunction2646666A",
+        "SubscriptiononCreateInfluencerauth0FunctionSubscriptiononCreateInfluencerauth0FunctionAppSyncFunctionDFD351FD",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononCreateMatchRequestpostAuth0FunctionSubscriptiononCreateMatchRequestpostAuth0FunctionAppSyncFunctionA8BBF023",
+        "SubscriptiononCreateInfluencerpostAuth0FunctionSubscriptiononCreateInfluencerpostAuth0FunctionAppSyncFunctionB71AEFEA",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnCreateMatchRequestDataResolverFnSubscriptionOnCreateMatchRequestDataResolverFnAppSyncFunctionDC743485",
+        "SubscriptionOnCreateInfluencerDataResolverFnSubscriptionOnCreateInfluencerDataResolverFnAppSyncFunctionBE937643",
         "FunctionId"
        ]
       }
@@ -1675,7 +1703,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -1717,10 +1745,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/subscriptionOnCreateMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/subscriptionOnCreateInfluencerResolver"
    }
   },
-  "SubscriptiononUpdateMatchRequestauth0FunctionSubscriptiononUpdateMatchRequestauth0FunctionAppSyncFunction426D7912": {
+  "SubscriptiononUpdateInfluencerauth0FunctionSubscriptiononUpdateInfluencerauth0FunctionAppSyncFunction1C896327": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1730,7 +1758,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononUpdateMatchRequestauth0Function",
+    "Name": "SubscriptiononUpdateInfluencerauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
     },
@@ -1739,10 +1767,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononUpdateMatchRequestauth0Function/SubscriptiononUpdateMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptiononUpdateInfluencerauth0Function/SubscriptiononUpdateInfluencerauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononUpdateMatchRequestpostAuth0FunctionSubscriptiononUpdateMatchRequestpostAuth0FunctionAppSyncFunction366DDA80": {
+  "SubscriptiononUpdateInfluencerpostAuth0FunctionSubscriptiononUpdateInfluencerpostAuth0FunctionAppSyncFunction216E720E": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1752,7 +1780,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononUpdateMatchRequestpostAuth0Function",
+    "Name": "SubscriptiononUpdateInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1761,10 +1789,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononUpdateMatchRequestpostAuth0Function/SubscriptiononUpdateMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptiononUpdateInfluencerpostAuth0Function/SubscriptiononUpdateInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnUpdateMatchRequestDataResolverFnSubscriptionOnUpdateMatchRequestDataResolverFnAppSyncFunction44E8CB61": {
+  "SubscriptionOnUpdateInfluencerDataResolverFnSubscriptionOnUpdateInfluencerDataResolverFnAppSyncFunctionFAB307F6": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1774,7 +1802,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnUpdateMatchRequestDataResolverFn",
+    "Name": "SubscriptionOnUpdateInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1785,34 +1813,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptionOnUpdateMatchRequestDataResolverFn/SubscriptionOnUpdateMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptionOnUpdateInfluencerDataResolverFn/SubscriptionOnUpdateInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononUpdateMatchRequestResolver": {
+  "SubscriptiononUpdateInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "onUpdateMatchRequest",
+    "FieldName": "onUpdateInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononUpdateMatchRequestauth0FunctionSubscriptiononUpdateMatchRequestauth0FunctionAppSyncFunction426D7912",
+        "SubscriptiononUpdateInfluencerauth0FunctionSubscriptiononUpdateInfluencerauth0FunctionAppSyncFunction1C896327",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononUpdateMatchRequestpostAuth0FunctionSubscriptiononUpdateMatchRequestpostAuth0FunctionAppSyncFunction366DDA80",
+        "SubscriptiononUpdateInfluencerpostAuth0FunctionSubscriptiononUpdateInfluencerpostAuth0FunctionAppSyncFunction216E720E",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnUpdateMatchRequestDataResolverFnSubscriptionOnUpdateMatchRequestDataResolverFnAppSyncFunction44E8CB61",
+        "SubscriptionOnUpdateInfluencerDataResolverFnSubscriptionOnUpdateInfluencerDataResolverFnAppSyncFunctionFAB307F6",
         "FunctionId"
        ]
       }
@@ -1822,7 +1850,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -1864,10 +1892,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/subscriptionOnUpdateMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/subscriptionOnUpdateInfluencerResolver"
    }
   },
-  "SubscriptiononDeleteMatchRequestauth0FunctionSubscriptiononDeleteMatchRequestauth0FunctionAppSyncFunctionAAB17BBA": {
+  "SubscriptiononDeleteInfluencerauth0FunctionSubscriptiononDeleteInfluencerauth0FunctionAppSyncFunctionA1ABC933": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1877,7 +1905,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononDeleteMatchRequestauth0Function",
+    "Name": "SubscriptiononDeleteInfluencerauth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
     },
@@ -1886,10 +1914,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononDeleteMatchRequestauth0Function/SubscriptiononDeleteMatchRequestauth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptiononDeleteInfluencerauth0Function/SubscriptiononDeleteInfluencerauth0Function.AppSyncFunction"
    }
   },
-  "SubscriptiononDeleteMatchRequestpostAuth0FunctionSubscriptiononDeleteMatchRequestpostAuth0FunctionAppSyncFunction5D0DE530": {
+  "SubscriptiononDeleteInfluencerpostAuth0FunctionSubscriptiononDeleteInfluencerpostAuth0FunctionAppSyncFunction776A4146": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1899,7 +1927,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptiononDeleteMatchRequestpostAuth0Function",
+    "Name": "SubscriptiononDeleteInfluencerpostAuth0Function",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
     },
@@ -1908,10 +1936,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptiononDeleteMatchRequestpostAuth0Function/SubscriptiononDeleteMatchRequestpostAuth0Function.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptiononDeleteInfluencerpostAuth0Function/SubscriptiononDeleteInfluencerpostAuth0Function.AppSyncFunction"
    }
   },
-  "SubscriptionOnDeleteMatchRequestDataResolverFnSubscriptionOnDeleteMatchRequestDataResolverFnAppSyncFunction9BBF73D9": {
+  "SubscriptionOnDeleteInfluencerDataResolverFnSubscriptionOnDeleteInfluencerDataResolverFnAppSyncFunction229B83DA": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -1921,7 +1949,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "SubscriptionOnDeleteMatchRequestDataResolverFn",
+    "Name": "SubscriptionOnDeleteInfluencerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
     },
@@ -1932,34 +1960,34 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/SubscriptionOnDeleteMatchRequestDataResolverFn/SubscriptionOnDeleteMatchRequestDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/SubscriptionOnDeleteInfluencerDataResolverFn/SubscriptionOnDeleteInfluencerDataResolverFn.AppSyncFunction"
    }
   },
-  "SubscriptiononDeleteMatchRequestResolver": {
+  "SubscriptiononDeleteInfluencerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
     },
-    "FieldName": "onDeleteMatchRequest",
+    "FieldName": "onDeleteInfluencer",
     "Kind": "PIPELINE",
     "PipelineConfig": {
      "Functions": [
       {
        "Fn::GetAtt": [
-        "SubscriptiononDeleteMatchRequestauth0FunctionSubscriptiononDeleteMatchRequestauth0FunctionAppSyncFunctionAAB17BBA",
+        "SubscriptiononDeleteInfluencerauth0FunctionSubscriptiononDeleteInfluencerauth0FunctionAppSyncFunctionA1ABC933",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptiononDeleteMatchRequestpostAuth0FunctionSubscriptiononDeleteMatchRequestpostAuth0FunctionAppSyncFunction5D0DE530",
+        "SubscriptiononDeleteInfluencerpostAuth0FunctionSubscriptiononDeleteInfluencerpostAuth0FunctionAppSyncFunction776A4146",
         "FunctionId"
        ]
       },
       {
        "Fn::GetAtt": [
-        "SubscriptionOnDeleteMatchRequestDataResolverFnSubscriptionOnDeleteMatchRequestDataResolverFnAppSyncFunction9BBF73D9",
+        "SubscriptionOnDeleteInfluencerDataResolverFnSubscriptionOnDeleteInfluencerDataResolverFnAppSyncFunction229B83DA",
         "FunctionId"
        ]
       }
@@ -1969,7 +1997,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteMatchRequest\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteInfluencer\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -2011,10 +2039,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/subscriptionOnDeleteMatchRequestResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/subscriptionOnDeleteInfluencerResolver"
    }
   },
-  "MatchRequestOwnerDataResolverFnMatchRequestOwnerDataResolverFnAppSyncFunction643E878C": {
+  "InfluencerOwnerDataResolverFnInfluencerOwnerDataResolverFnAppSyncFunction7D94FF5C": {
    "Type": "AWS::AppSync::FunctionConfiguration",
    "Properties": {
     "ApiId": {
@@ -2024,7 +2052,7 @@
      "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPINONEDSB4F7D719Name"
     },
     "FunctionVersion": "2018-05-29",
-    "Name": "MatchRequestOwnerDataResolverFn",
+    "Name": "InfluencerOwnerDataResolverFn",
     "RequestMappingTemplateS3Location": {
      "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
     },
@@ -2035,10 +2063,10 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/MatchRequestOwnerDataResolverFn/MatchRequestOwnerDataResolverFn.AppSyncFunction"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/InfluencerOwnerDataResolverFn/InfluencerOwnerDataResolverFn.AppSyncFunction"
    }
   },
-  "MatchRequestownerResolver": {
+  "InfluencerownerResolver": {
    "Type": "AWS::AppSync::Resolver",
    "Properties": {
     "ApiId": {
@@ -2050,7 +2078,7 @@
      "Functions": [
       {
        "Fn::GetAtt": [
-        "MatchRequestOwnerDataResolverFnMatchRequestOwnerDataResolverFnAppSyncFunction643E878C",
+        "InfluencerOwnerDataResolverFnInfluencerOwnerDataResolverFnAppSyncFunction7D94FF5C",
         "FunctionId"
        ]
       }
@@ -2060,7 +2088,7 @@
      "Fn::Join": [
       "",
       [
-       "$util.qr($ctx.stash.put(\"typeName\", \"MatchRequest\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       "$util.qr($ctx.stash.put(\"typeName\", \"Influencer\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
@@ -2097,12 +2125,12 @@
      ]
     },
     "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
-    "TypeName": "MatchRequest"
+    "TypeName": "Influencer"
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/matchRequestOwnerResolver"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/influencerOwnerResolver"
    }
   },
   "CDKMetadata": {
@@ -2111,17 +2139,17 @@
     "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQQW+DMAyFf8vuqdfRw84raMdtgt0rkxiUAg6KnVYV4r9PoVOnnZ6f3pP9yQUU+1fYP+FVdtYNu9G3sHyQKLlG0Q6m7PgLI06kFLMpAzuvPrCpSUKKlkyZRMP0Zzt+zHiV0+JujFNwLXxjO9IRhYzHCZY6jPd2GGk1OM9yYwtLtdWrtkLF5rHyv3tPbDNEGbjzfYq4Ef1eHi8UVyOHE4qQCrxlMXKAY7IDaQZYc/cz6ZzUbHGj2HvuV8PBEZzl+VIU8JI/cxbvdzGx+omgvusP+xrAkjYBAAA="
    },
    "Metadata": {
-    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/MatchRequest/CDKMetadata/Default"
+    "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/Influencer/CDKMetadata/Default"
    },
    "Condition": "CDKMetadataAvailable"
   }
  },
  "Outputs": {
-  "GetAttMatchRequestTableStreamArn": {
+  "GetAttInfluencerTableStreamArn": {
    "Description": "Your DynamoDB table StreamArn.",
    "Value": {
     "Fn::GetAtt": [
-     "MatchRequestTable",
+     "InfluencerTable",
      "TableStreamArn"
     ]
    },
@@ -2133,19 +2161,19 @@
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
-       "GetAtt:MatchRequestTable:StreamArn"
+       "GetAtt:InfluencerTable:StreamArn"
       ]
      ]
     }
    }
   },
-  "GetAttMatchRequestTableName": {
+  "GetAttInfluencerTableName": {
    "Description": "Your DynamoDB table name.",
    "Value": {
     "Fn::Join": [
      "",
      [
-      "MatchRequest-",
+      "Influencer-",
       {
        "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
       },
@@ -2161,7 +2189,7 @@
        {
         "Ref": "referencetoamplifyaurasightdarcysandbox17345db928dataamplifyDataGraphQLAPI20AE8DD8ApiId"
        },
-       "GetAtt:MatchRequestTable:Name"
+       "GetAtt:InfluencerTable:Name"
       ]
      ]
     }

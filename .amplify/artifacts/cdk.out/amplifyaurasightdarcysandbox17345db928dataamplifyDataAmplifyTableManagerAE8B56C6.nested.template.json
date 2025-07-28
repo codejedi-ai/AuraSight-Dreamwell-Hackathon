@@ -443,7 +443,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWNyw6CMBBFv4V9GQUW6lJMXBoDH0CGdiTl0SZMKzFN/90Aujrn5ixuDtn5AlmCC6dSDemoWwgPYkeqdigHgQs3QeMEobIjidvLbHzaUcvPOneLYsSpVQjh7o102pq1/T0KLhpkJsdwXSG4gNLLgVyJTFFUxNbPksRWa4edNt129gtRGKsIej688xyyExyTnrVOZ2+cngiqnV8L+2/VzwAAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zWOwQ6CMBBEv8V7WbEcPIuJR2PgA8jSrqQCbcK2EtP0301BT28m7zAjQZZnKA+4cqH0WEymh3gn9qRbj2oUuHIXDc4QGzeRuD7txoebjPrkuqckJpx7jRBvwSpvnM3un5PgqkNm8gyXDMEV1EGN5GtkSqIhdmFRJDbbehyMHbaxn0jCOk3w4uNbSjjlyy82pliC9WYmaHZ+AZOwRm7PAAAA"
    },
    "Metadata": {
     "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/data/amplifyData/AmplifyTableManager/CDKMetadata/Default"

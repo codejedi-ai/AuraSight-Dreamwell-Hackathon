@@ -301,7 +301,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02LwQ6CMBBEv4V7WYWLejScvBiD8Wxqu+pC6SZ0kZim/26IQTnNzJuZEortDopMjyE3ts0d3SAeMQjas2jTKj2GazT88CQM8RKwPzE7Vd39z8+mcoReltWfHCx6IXnP52Wu2eFeRJtnh16SIt1BnOA0nDQlVWPgoTeYlGeL0ITVqyyh2MA6awJR3g9eqEOov/oBwXcVmNcAAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01OvQrCMBB+Fvf0rFmcpZOLSMVZYnLqtWkOmqtFQt5dglSdvn/4NOh6C/XKzLGyrq88XSEdMAq6kxjbKzPHS7J8DyQM6RxxPDJ71dzCly+k8YRB/qOfs3cYhOS1jP91yx53IsY+BgySFZkBUjFLsWDOqsXI02gxq8AOoYvrp9awKde7SFSNUxAaENoPvgH9lMhl1wAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-aurasight-darcy-sandbox-17345db928/auth/CDKMetadata/Default"
