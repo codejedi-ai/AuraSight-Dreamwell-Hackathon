@@ -30,7 +30,7 @@ export default function AuraSightPage() {
           </Link>
         </nav>
         <div className="ml-6">
-          <Link href="/auth/login">
+          <Link href="/auth">
             <Button>Get Started</Button>
           </Link>
         </div>
@@ -47,7 +47,7 @@ export default function AuraSightPage() {
             audience synergy. Go beyond metrics, and connect on a deeper level.
           </p>
           <div className="mt-8">
-            <Link href="/auth/login">
+            <Link href="/auth">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
