@@ -6,19 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { useAuth } from "@/app/auth/AuthContext"
-
-interface UserData {
-  id: string
-  email: string
-  firstName?: string
-  lastName?: string
-  accountType?: string
-}
-
-interface ProfileFormProps {
-  userData: UserData
-}
 
 interface ProfileData {
   userId: string
@@ -43,10 +30,10 @@ interface ProfileData {
 }
 
 export default function ProfileForm() {
-  const { user } = useAuth()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
+  const [accountType, setAccountType] = useState<'brand' | 'influencer'>('influencer')
 
   const handleSubmit = async (formData: FormData) => {
     setLoading(true)
@@ -70,32 +57,40 @@ export default function ProfileForm() {
     }
   }
 
-  if (!user) {
-    return (
-      <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Authentication Required</h2>
-          <p className="text-muted-foreground">Please sign in to create your profile.</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="container mx-auto px-4 py-8">
       <Card className="max-w-4xl mx-auto">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
-            Create Your {user.accountType === 'brand' ? 'Brand' : 'Influencer'} Profile
+            Create Your {accountType === 'brand' ? 'Brand' : 'Influencer'} Profile
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form action={handleSubmit} className="space-y-6">
-            <input type="hidden" name="userId" value={user.id} />
-            <input type="hidden" name="email" value={user.email} />
-            <input type="hidden" name="firstName" value={user.firstName || ""} />
-            <input type="hidden" name="lastName" value={user.lastName || ""} />
-            <input type="hidden" name="accountType" value={user.accountType || ""} />
+            <input type="hidden" name="accountType" value={accountType} />
+
+            {/* Account Type Selection */}
+            <div>
+              <Label htmlFor="accountType" className="text-muted-foreground">
+                Account Type
+              </Label>
+              <div className="flex gap-4 mt-2">
+                <Button
+                  type="button"
+                  variant={accountType === 'influencer' ? 'default' : 'outline'}
+                  onClick={() => setAccountType('influencer')}
+                >
+                  Influencer
+                </Button>
+                <Button
+                  type="button"
+                  variant={accountType === 'brand' ? 'default' : 'outline'}
+                  onClick={() => setAccountType('brand')}
+                >
+                  Brand
+                </Button>
+              </div>
+            </div>
 
             {/* Common Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -107,7 +102,6 @@ export default function ProfileForm() {
                   id="firstName"
                   name="firstName"
                   placeholder="Enter your first name"
-                  defaultValue={user.firstName || ""}
                   className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
@@ -119,7 +113,6 @@ export default function ProfileForm() {
                   id="lastName"
                   name="lastName"
                   placeholder="Enter your last name"
-                  defaultValue={user.lastName || ""}
                   className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
                 />
               </div>
@@ -134,8 +127,6 @@ export default function ProfileForm() {
                 name="email"
                 type="email"
                 placeholder="Enter your email"
-                defaultValue={user.email || ""}
-                disabled
                 className="bg-background/50 border-border text-foreground placeholder:text-muted-foreground"
               />
             </div>
@@ -179,7 +170,7 @@ export default function ProfileForm() {
             </div>
 
             {/* Brand-specific fields */}
-            {user.accountType === 'brand' && (
+            {accountType === 'brand' && (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -257,7 +248,7 @@ export default function ProfileForm() {
             )}
 
             {/* Influencer-specific fields */}
-            {user.accountType === 'influencer' && (
+            {accountType === 'influencer' && (
               <>
                 <div>
                   <Label htmlFor="platforms" className="text-muted-foreground">
