@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation"
 import { getCurrentUser } from "aws-amplify/auth"
 import { generateClient } from "aws-amplify/data"
 import type { Schema } from "@/amplify/data/resource"
+import { Amplify } from "aws-amplify"
+import outputs from "@/amplify_outputs.json"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -13,6 +15,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Loader2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
+// Configure Amplify
+Amplify.configure(outputs)
 
 const client = generateClient<Schema>()
 
