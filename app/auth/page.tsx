@@ -4,12 +4,19 @@ import { Amplify } from 'aws-amplify';
 import outputs from '@/amplify_outputs.json';
 import '@aws-amplify/ui-react/styles.css';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 Amplify.configure(outputs);
 
 export default function AuthPage() {
   const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push('/dashboard');
+    }
+  }, [isAuthenticated, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -22,13 +29,10 @@ export default function AuthPage() {
         </div>
         <Authenticator>
           {({ user }) => {
-            // Redirect to dashboard when user is authenticated
-            useEffect(() => {
-              if (user) {
-                router.push('/dashboard');
-              }
-            }, [user, router]);
-
+            // Set authentication state when user is available
+            if (user && !isAuthenticated) {
+              setIsAuthenticated(true);
+            }
             return <div className="hidden">Redirecting...</div>; // Return a proper element
           }}
         </Authenticator>
